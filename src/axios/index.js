@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://sanchitbhadgaldev.netlify.app/api/",
+  baseURL: "/api/",
 });
 
 export default instance;
