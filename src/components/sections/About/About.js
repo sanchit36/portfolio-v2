@@ -3,12 +3,10 @@ import { Container, Section } from "@/styles/globalStyle";
 import { ButtonLink } from "../../Button/Button.styles";
 import Heading from "../../Heading/Heading";
 import { Content, Flex, ImageContainer } from "./About.styles";
-import ReactMarkdown from "react-markdown";
 
 import Links from "../../Links/Links";
-import { socialLinks } from "../../../data";
 
-const About = ({ about }) => {
+const About = ({ about, links }) => {
   return (
     <React.Fragment>
       <Section style={{ paddingTop: 0 }}>
@@ -16,7 +14,7 @@ const About = ({ about }) => {
           <Heading>About</Heading>
           <Flex>
             <Content>
-              <ReactMarkdown>{about.content}</ReactMarkdown>
+              <div dangerouslySetInnerHTML={{ __html: about.content }} />
               {about.resume_url && (
                 <ButtonLink
                   target="blank"
@@ -26,7 +24,7 @@ const About = ({ about }) => {
                   Resume
                 </ButtonLink>
               )}
-              <Links data={socialLinks} />
+              <Links links={links} />
             </Content>
             <ImageContainer>
               <img src={about.image} alt="" />

@@ -1,15 +1,14 @@
 import React from "react";
-import { socialLinks } from "../../data";
 import { Container } from "@/styles/globalStyle";
 import Links from "../Links/Links";
 import { FooterContainer } from "./Footer.styles";
 
-const Footer = () => {
+const Footer = ({ links }) => {
   return (
     <FooterContainer>
       <Container>
         <p>Designed and Developed by Sanchit Bhadgal</p>
-        <Links data={socialLinks} />
+        <Links links={links} />
       </Container>
     </FooterContainer>
   );

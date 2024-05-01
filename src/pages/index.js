@@ -6,7 +6,7 @@ import Contact from "../components/sections/Contact/Contact";
 import ProjectList from "../components/sections/ProjectList/ProjectList";
 import axios from "../axios";
 
-export default function HomePage({ intro, about, projects }) {
+export default function HomePage({ intro, about, projects, links }) {
   return (
     <div>
       <Head>
@@ -18,25 +18,22 @@ export default function HomePage({ intro, about, projects }) {
       </Head>
       <main>
         <Banner intro={intro} />
-        <About about={about} />
+        <About about={about} links={links} />
         <ProjectList projects={projects} />
         <Contact />
       </main>
-      <Footer />
+      <Footer links={links} />
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const res1 = await axios.get("project");
-  const res2 = await axios.get("intro/1");
-  const res3 = await axios.get("about/1");
-
-  const projects = res1.data;
-  const intro = res2.data;
-  const about = res3.data;
+  const projects = (await axios.get("project")).data;
+  const links = (await axios.get("social-links")).data;
+  const intro = (await axios.get("intro")).data;
+  const about = (await axios.get("about")).data;
 
   return {
-    props: { projects, intro, about },
+    props: { projects, links, intro, about },
   };
 }

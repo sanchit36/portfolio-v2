@@ -15,7 +15,7 @@ const Banner = ({ intro }) => {
           <SubTitle>
             {"< "}
             <Typed
-              strings={intro.roles.map((role) => role.name)}
+              strings={intro.roles.map((role) => role)}
               typeSpeed={40}
               backSpeed={50}
               cursorChar={" />"}
