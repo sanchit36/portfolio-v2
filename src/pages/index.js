@@ -4,36 +4,25 @@ import About from "../components/sections/About/About";
 import Banner from "../components/sections/Banner/Banner";
 import Contact from "../components/sections/Contact/Contact";
 import ProjectList from "../components/sections/ProjectList/ProjectList";
-import axios from "../axios";
+import { intro } from "src/data/intro";
 
-export default function HomePage({ intro, about, projects, links }) {
+export default function HomePage() {
   return (
     <div>
       <Head>
-        <title>Sanchit Bhadgal | Portfolio</title>
+        <title>{intro.name} | Portfolio</title>
         <meta
           name="description"
-          content="Sanchit Bhadgal is a full-stack web developer, Having knowledge of Reactjs, Nextjs and Django"
+          content="{intro.name} is a full-stack web developer, Having knowledge of Reactjs, Nextjs and ExpressJS"
         />
       </Head>
       <main>
-        <Banner intro={intro} />
-        <About about={about} links={links} />
-        <ProjectList projects={projects} />
+        <Banner />
+        <About />
+        <ProjectList />
         <Contact />
       </main>
-      <Footer links={links} />
+      <Footer />
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const projects = (await axios.get("project")).data;
-  const links = (await axios.get("social-links")).data;
-  const intro = (await axios.get("intro")).data;
-  const about = (await axios.get("about")).data;
-
-  return {
-    props: { projects, links, intro, about },
-  };
 }

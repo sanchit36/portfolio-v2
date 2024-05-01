@@ -3,10 +3,11 @@ import { Container, Section } from "@/styles/globalStyle";
 import { ButtonLink } from "../../Button/Button.styles";
 import Heading from "../../Heading/Heading";
 import { Content, Flex, ImageContainer } from "./About.styles";
+import { about } from "src/data/about";
 
 import Links from "../../Links/Links";
 
-const About = ({ about, links }) => {
+const About = () => {
   return (
     <React.Fragment>
       <Section style={{ paddingTop: 0 }}>
@@ -24,7 +25,7 @@ const About = ({ about, links }) => {
                   Resume
                 </ButtonLink>
               )}
-              <Links links={links} />
+              <Links />
             </Content>
             <ImageContainer>
               <img src={about.image} alt="" />

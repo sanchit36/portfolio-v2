@@ -3,8 +3,9 @@ import { SectionCenter } from "@/styles/globalStyle";
 import { ButtonGroup, ButtonLink } from "../../Button/Button.styles";
 import { Center, Content, Para, SubTitle } from "./Banner.styles";
 import Typed from "react-typed";
+import { intro } from "src/data/intro";
 
-const Banner = ({ intro }) => {
+const Banner = () => {
   return (
     <React.Fragment>
       <SectionCenter>

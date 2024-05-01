@@ -2,8 +2,9 @@ import React from "react";
 import { Container, Section } from "@/styles/globalStyle";
 import Heading from "../../Heading/Heading";
 import Project from "../../Project/Project";
+import { projects } from "src/data/projects";
 
-const ProjectList = ({ projects }) => {
+const ProjectList = () => {
   return (
     <React.Fragment>
       <Section id="work">
