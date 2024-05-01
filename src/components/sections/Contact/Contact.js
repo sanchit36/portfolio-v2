@@ -47,6 +47,8 @@ const Contact = () => {
           <h2 style={{ marginBottom: "2rem" }}>Get in Touch</h2>
           <Form onSubmit={handleSubmit}>
             <input
+              autoComplete="name"
+              autoCapitalize="words"
               type="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -54,6 +56,7 @@ const Contact = () => {
               required
             />
             <input
+              autoComplete="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

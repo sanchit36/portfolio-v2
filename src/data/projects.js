@@ -19,7 +19,7 @@ export const projects = [
     inverted: false,
   },
   {
-    id: "1",
+    id: "2",
     subtitle: "Web Sockets",
     title: "Async Tic Tac Toe",
     summary:
